@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="New folder/bootstrap-4.0.0/favicon.ico">
+
+  <title>Checkout example for Bootstrap</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link href="CSS/jay's-gadgets-tt.css" rel="stylesheet" type="text/css">
+  <link href="CSS/form-validation.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class=" text-center">
+    <img class="d-block mx-auto mb-4" src="images/nav-bar/logo.png" alt="" width="100" height="100">
+
+  </div>
+
+  <div class="row mx-auto mb-4 p-4 mt-0 form w-50">
+
+    <div class="col-12 ">
+      <h2 class="mb-3 w-100 text-center">Create new account</h2>
+      <hr class="mb-4">
+      <form id ="newUserForm" class="needs-validation" novalidate>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First name*</label>
+            <input name="firstName" type="text" class="form-control" id="firstName" placeholder="" value="" required >
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last name*</label>
+            <input name="lastName" type="text" class="form-control" id="lastName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email (Username)*</label>
+          <input name="username" type="email" class="form-control" id="email" placeholder="you@example.com" required>
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Password*</label>
+          <input name="password" type="password" class="form-control" id="password"  required>
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Confirm password*</label>
+          <input name="confirmPassword" type="password" class="form-control" id="confirmed-password">
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address">Address*</label>
+          <input name="addressLine1" type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+          <input name="addressLine2" type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="country">Country*</label>
+            <select name="country" class="custom-select d-block w-100" id="country" required>
+              <option value="">Choose...</option>
+              <option>United States</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="state">State*</label>
+            <select name="state" class="custom-select d-block w-100" id="state" required>
+              <option value="">Choose...</option>
+              <option>California</option>
+            </select>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="mb-4">
+        <button id="register" class="btn btn-primary btn-lg btn-block mb-4" type="submit">Register</button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<div class="footer-dark">
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col item social text-center">
+          <a href="#">
+            <i class="fa fa-facebook"></i>
+          </a>
+
+          <a href="#">
+            <i class="fa fa-youtube"></i>
+          </a>
+          <a href="#">
+            <i class="fa fa-instagram"></i>
+          </a>
+
+        </div>
+      </div>
+      <p class="copyright">Jay's Gadgets TT © 2022</p>
+    </div>
+  </footer>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(
+          function(){
+            $("#json").click(function (){
+              const formInputsArray = $("#newUserForm").serializeArray();
+              const json = {};
+              $.each(formInputsArray, function(){
+                json[this.name] = this.value || "";
+              });
+              console.log(json);
+            });
+          });
+
+  $(document).ready(function(){
+    $("#register").click(function(){
+      const password = $("#password");
+      const confirmedPassword = $("#confirmed-password");
+      if(password.val() != confirmedPassword.val()){
+        confirmedPassword[0].setCustomValidity("Invalid");
+      } else{
+        confirmedPassword[0].setCustomValidity("");
+      }
+    });
+  });
+
+  $(document).ready(function(){
+    $("#register").click(function(e){
+      const newUserForm = $("#newUserForm");
+      if (newUserForm[0].checkValidity() == false){
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      newUserForm.addClass('was-validated');
+    });
+  });
+
+</script>
+
+
+<script src="https://kit.fontawesome.com/157eab2719.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
