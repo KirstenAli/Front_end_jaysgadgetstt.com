@@ -3,27 +3,27 @@
 
 
 body {
-    margin: 0px;
-    background-color:  #282d32;
-    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
-
+	margin: 0px;
+	background-color:  #282d32;
+	font-family: Consolas, "Andale Mono", "Lucida Console",
+	"Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 }
 
 img.logo {
-    height: 70px;
-    width: 70px;
+	height: 70px;
+	width: 70px;
 }
 
 span.cart-num {
-    position: relative;
-    bottom: 15px;
-    font-size: 12px;
-} 
+	position: relative;
+	bottom: 15px;
+	font-size: 12px;
+}
 
 nav {
-    background-color: #600000de; 
-    word-spacing: -6px; 
-    font-size: 1.2rem;
+	background-color: #600000de;
+	word-spacing: -6px;
+	font-size: 1.2rem;
 }
 
 
@@ -48,51 +48,51 @@ nav {
 	line-height: 36px;
 	display: inline-block;
 	text-align: center;
-	border-radius: 50%; 
-	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4); 
+	border-radius: 50%;
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
 	margin: 0 8px;
-	color: #fff; 
+	color: #fff;
 	opacity: 0.75;
-} 
-
-.item.social>a:hover {
-	opacity: 0.9; 
 }
 
-.copyright { 
+.item.social>a:hover {
+	opacity: 0.9;
+}
+
+.copyright {
 	text-align: center;
 	padding-top: 24px;
 	opacity: 0.3;
 	font-size: 13px;
 	margin-bottom: 0;
-} 
+}
 
 .btn {
 	border-radius: 0;
 }
 
 #add{
-    background-color: rgba(96,0,0,.75);
+	background-color: rgba(96,0,0,.75);
 	border: none;
 }
 
 #add:hover {
-    background-color: rgba(96,0,0,.9);
+	background-color: rgba(96,0,0,.9);
 }
 
-#add:focus, #redeem:focus { 
-    box-shadow:  0 0 0 0.2rem rgb(82 88 93 / 20%);
+#add:focus, #redeem:focus {
+	box-shadow:  0 0 0 0.2rem rgb(82 88 93 / 20%);
 }
 
 #add:active, #redeem:active{
-    background-color: rgba(96,0,0,.5);
+	background-color: rgba(96,0,0,.5);
 }
 
 .page-title{
-    font-size: 2.2rem;
-    font-weight: 400;
-    
-	
+	font-size: 2.2rem;
+	font-weight: 400;
+
+
 }
 .form-control{
 	border-radius: 0;
@@ -104,27 +104,27 @@ nav {
 
 
 div.nav-wrapper {
-    background-image: url("../images/nav-bar/blur_edges.png");
-    background-size: contain;
+	background-image: url("../images/nav-bar/blur_edges.png");
+	background-size: contain;
 }
 
 
 .form{
-    border-style: outset;
-    border-width: 5px;
-    border-color: #600000de; 
-    background-color: #600000de; 
+	border-style: outset;
+	border-width: 5px;
+	border-color: #600000de;
+	background-color: #600000de;
 	color:rgba(255,255,255,0.5);
 }
 
 .form-body{
-    background-color: #282d32;
+	background-color: #282d32;
 }
 
-.form-title{ 
-    color: #ffffff85;
+.form-title{
+	color: #ffffff85;
 }
-		
+
 
 h1, h3, h2, h4 {
 	font-weight: 600;
